@@ -34,16 +34,16 @@ const thirdPromise = Promise.all([firstEvent, secondEvent]).then(() => {
   return new Promise((resolve) => resolve('Third promise was resolved'));
 });
 
-const fulfilled = (msg) =>
+const fulfilled = (message) =>
   document.body.insertAdjacentHTML(
     'afterbegin',
-    `<div data-qa="notification" class="success">${msg}</div>`,
+    `<div data-qa="notification" class="success">${message}</div>`,
   );
 
-const rejected = (msg) =>
+const rejected = (error) =>
   document.body.insertAdjacentHTML(
     'afterbegin',
-    `<div data-qa="notification" class="error">${msg}</div>`,
+    `<div data-qa="notification" class="error">${error.message}</div>`,
   );
 
 firstPromise.then(fulfilled, rejected);
