@@ -31,7 +31,7 @@ const secondEvent = new Promise((resolve) => {
 });
 
 const thirdPromise = Promise.all([firstEvent, secondEvent]).then(() => {
-  return new Promise((resolve) => resolve('Third promise was resolved'));
+  return 'Third promise was resolved';
 });
 
 const fulfilled = (message) =>
